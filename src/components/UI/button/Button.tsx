@@ -1,5 +1,5 @@
 import React, { ComponentPropsWithoutRef, ReactNode } from "react";
-import { ButtonUI } from "../../styles/components";
+import { ButtonUI } from "../../../styles/components";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   buttonColor: string;

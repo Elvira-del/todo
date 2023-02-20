@@ -1,10 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { Container } from "styles/components";
-
-const StyledSection = styled.section`
-  margin-bottom: 30px;
-`;
+import * as Styled from "./StyledSection";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -12,8 +8,8 @@ interface SectionProps {
 
 export const Section = ({ children }: SectionProps) => {
   return (
-    <StyledSection>
+    <Styled.Section>
       <Container>{children}</Container>
-    </StyledSection>
+    </Styled.Section>
   );
 };

@@ -1,45 +1,9 @@
 import React, { ChangeEvent, useState } from "react";
-import styled from "styled-components";
 import { Title3 } from "../../../styles/components";
-import { Button } from "../../../UI/button/Button";
-import { Checkbox } from "UI/input/Checkbox";
+import { Button } from "../../UI/button/Button";
+import { Checkbox } from "components/UI/input/Checkbox";
 import { Task } from "../TaskApp";
-
-const StyledTaskCard = styled.li`
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  min-width: ${({ theme }) => theme.sizes.task.minWidth}px;
-  min-height: 50px;
-  border-radius: ${({ theme }) => theme.border.radius}px;
-  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
-`;
-
-interface StyledTaskContentProps {
-  done?: boolean;
-}
-
-const StyledTaskContent = styled.div<StyledTaskContentProps>`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  column-gap: 10px;
-  width: 100%;
-
-  ${Title3} {
-    transition: all ${({ theme }) => theme.durations.ms300}ms linear;
-    text-decoration: ${({ done }) => (done ? "line-through" : "none")};
-    color: ${({ done }) => (done ? "#999999" : "")};
-  }
-`;
-
-const StyledTaskButtonWrap = styled.div`
-  display: flex;
-  column-gap: 10px;
-`;
+import * as Styled from "./StyledTaskCard";
 
 interface TaskCardProps {
   task: Task;
@@ -66,11 +30,11 @@ export const TaskCard = ({
   };
 
   return (
-    <StyledTaskCard>
+    <Styled.TaskCard>
       <Checkbox checked={task.done} onChange={handleCheckTask} />
 
       {isEditing ? (
-        <StyledTaskContent>
+        <Styled.TaskContent>
           <input
             value={task.text}
             onChange={(e) => onEdit({ ...task, text: e.target.value })}
@@ -78,7 +42,7 @@ export const TaskCard = ({
             title="Change your task"
           />
 
-          <StyledTaskButtonWrap>
+          <Styled.TaskButtonWrap>
             <Button
               buttonColor="success"
               onClick={() => setIsEditing(false)}
@@ -86,13 +50,13 @@ export const TaskCard = ({
             >
               Save
             </Button>
-          </StyledTaskButtonWrap>
-        </StyledTaskContent>
+          </Styled.TaskButtonWrap>
+        </Styled.TaskContent>
       ) : (
-        <StyledTaskContent done={task.done}>
+        <Styled.TaskContent done={task.done}>
           <Title3>{task.text}</Title3>
 
-          <StyledTaskButtonWrap>
+          <Styled.TaskButtonWrap>
             <Button
               buttonColor="primary"
               onClick={() => handleEditTask(task)}
@@ -107,9 +71,9 @@ export const TaskCard = ({
             >
               Delete
             </Button>
-          </StyledTaskButtonWrap>
-        </StyledTaskContent>
+          </Styled.TaskButtonWrap>
+        </Styled.TaskContent>
       )}
-    </StyledTaskCard>
+    </Styled.TaskCard>
   );
 };
