@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Button } from "../../UI/button/Button";
 import * as Styled from "./StyledAddTaskForm";
+import { InputText } from "components/UI/input/InputText";
 
 interface AddTaskFormProps {
   onAddTask: (text: string) => void;
@@ -25,7 +26,12 @@ export const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
     <>
       <Styled.TaskForm onSubmit={handleSubmitTask}>
         <Styled.LabelTaskForm>
-          <Styled.InputTaskForm value={text} onChange={handleChangeTitle} />
+          <InputText
+            value={text}
+            onChange={handleChangeTitle}
+            id="titleTask"
+            placeholder="Add your task"
+          />
         </Styled.LabelTaskForm>
 
         <Button buttonColor="primary" type="submit">

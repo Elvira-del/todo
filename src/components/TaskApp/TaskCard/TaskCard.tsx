@@ -4,6 +4,7 @@ import { Button } from "../../UI/button/Button";
 import { Checkbox } from "components/UI/input/Checkbox";
 import { Task } from "../TaskApp";
 import * as Styled from "./StyledTaskCard";
+import { InputText } from "components/UI/input/InputText";
 
 interface TaskCardProps {
   task: Task;
@@ -35,10 +36,11 @@ export const TaskCard = ({
 
       {isEditing ? (
         <Styled.TaskContent>
-          <input
+          <InputText
             value={task.text}
-            onChange={(e) => onEdit({ ...task, text: e.target.value })}
-            type="text"
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              onEdit({ ...task, text: e.target.value })
+            }
             title="Change your task"
           />
 
