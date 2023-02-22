@@ -58,6 +58,10 @@ export const ButtonUI = styled.button<ButtonUIProps>`
         return css`
           background-color: ${theme.colors.secondary};
         `;
+      case "disabled":
+        return css`
+          background-color: ${theme.colors.disabled};
+        `;
       default:
         return css`
           background-color: ${theme.colors.primary};

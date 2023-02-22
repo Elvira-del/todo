@@ -5,6 +5,7 @@ export const baseTheme: DefaultTheme = {
     primary: "#7986cb",
     secondary: "#152b3c",
     success: "#2f906a",
+    disabled: "rgba(121, 134, 203, 0.7)",
 
     font: "#2b2b2b",
   },
