@@ -18,6 +18,7 @@ declare module "styled-components" {
     sizes: {
       container: { maxWidth: number };
       header: { height: number };
+      footer: { height: number };
       task: { minWidth: number };
     };
 

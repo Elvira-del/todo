@@ -6,6 +6,7 @@ import { Title2 } from "../../styles/components";
 import { TaskList } from "./TaskList/TaskList";
 import { Section } from "components/TaskApp/Section/Section";
 import idGenerate from "core/utils/idGenerate";
+import Footer from "./Footer/Footer";
 
 export interface Task {
   id: string;
@@ -67,6 +68,8 @@ export const TaskApp = () => {
           )}
         </Section>
       </main>
+
+      <Footer tasks={tasks} />
     </>
   );
 };

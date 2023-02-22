@@ -17,7 +17,8 @@ export const baseTheme: DefaultTheme = {
   // in px
   sizes: {
     container: { maxWidth: 1400 },
-    header: { height: 57 },
+    header: { height: 60 },
+    footer: { height: 60 },
     task: { minWidth: 250 },
   },
 

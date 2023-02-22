@@ -8,7 +8,7 @@ export const Header = styled.header`
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 10px 0;
 `;
