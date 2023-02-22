@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "styles/components";
 import { Task } from "../TaskApp";
 import * as Styled from "./StyledFooter";
