@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { Button } from "../../UI/button/Button";
+import { Button } from "../../atoms/button/Button";
 import * as Styled from "./StyledAddTaskForm";
-import { InputText } from "components/UI/input/InputText";
+import { InputText } from "components/atoms/input/InputText";
 
 interface AddTaskFormProps {
   onAddTask: (text: string) => void;

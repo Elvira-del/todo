@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useState } from "react";
 import { Title3 } from "../../../styles/components";
-import { Button } from "../../UI/button/Button";
-import { Checkbox } from "components/UI/input/Checkbox";
+import { Button } from "../../atoms/button/Button";
+import { Checkbox } from "components/atoms/checkbox/Checkbox";
 import { Task } from "../TaskApp";
+import { InputText } from "components/atoms/input/InputText";
 import * as Styled from "./StyledTaskCard";
-import { InputText } from "components/UI/input/InputText";
 
 interface TaskCardProps {
   task: Task;
@@ -60,16 +60,16 @@ export const TaskCard = ({
 
           <Styled.TaskButtonWrap>
             <Button
+              type="button"
               buttonColor="primary"
               onClick={() => handleEditTask(task)}
-              type="button"
             >
               Edit
             </Button>
             <Button
+              type="button"
               buttonColor="secondary"
               onClick={() => onDelete(task.id)}
-              type="button"
             >
               Delete
             </Button>

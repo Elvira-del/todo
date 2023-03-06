@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Input = styled.input.attrs({
-  type: "text",
-})`
+const Input = styled.input`
   padding: 10px;
   width: 100%;
   height: 100%;
@@ -11,6 +9,6 @@ const Input = styled.input.attrs({
   border-radius: ${({ theme }) => theme.border.radius}px;
 `;
 
-export const InputText = ({ ...other }) => {
-  return <Input {...other} />;
+export const InputText = ({ ...rest }) => {
+  return <Input type="text" {...rest} />;
 };
