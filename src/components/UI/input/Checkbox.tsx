@@ -1,17 +1,12 @@
-import React, { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef } from "react";
 import styled from "styled-components";
 
-const Label = styled.label.attrs({
-  htmlFor: "checkTask",
-})`
+const Label = styled.label`
   display: flex;
   align-items: center;
 `;
 
-const HiddenCheckbox = styled.input.attrs<CheckboxProps>({
-  type: "checkbox",
-  id: "checkTask",
-})`
+const HiddenCheckbox = styled.input`
   position: relative;
   appearance: none;
   width: 1.6em;
@@ -39,12 +34,13 @@ const HiddenCheckbox = styled.input.attrs<CheckboxProps>({
 
 interface CheckboxProps extends ComponentPropsWithoutRef<"input"> {
   checked: boolean;
+  id: string;
 }
 
-export const Checkbox = ({ checked, ...other }: CheckboxProps) => {
+export const Checkbox = ({ checked, id, ...rest }: CheckboxProps) => {
   return (
-    <Label>
-      <HiddenCheckbox checked={checked} {...other} />
+    <Label htmlFor={id}>
+      <HiddenCheckbox type="checkbox" checked={checked} id={id} {...rest} />
     </Label>
   );
 };

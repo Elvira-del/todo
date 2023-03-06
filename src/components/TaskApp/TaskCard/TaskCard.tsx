@@ -32,7 +32,7 @@ export const TaskCard = ({
 
   return (
     <Styled.TaskCard>
-      <Checkbox checked={task.done} onChange={handleCheckTask} />
+      <Checkbox checked={task.done} id={task.id} onChange={handleCheckTask} />
 
       {isEditing ? (
         <Styled.TaskContent>
