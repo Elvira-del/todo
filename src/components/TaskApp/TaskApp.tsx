@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocalStorage } from "core/hooks/hooks";
 import { Header } from "./Header/Header";
-import { AddTaskForm } from "./AddTaskForm/AddTaskForm";
+import { AddTaskForm } from "../molecules/AddTaskForm/AddTaskForm";
 import { Title2 } from "../../styles/components";
 import { TaskList } from "./TaskList/TaskList";
 import { Section } from "components/TaskApp/Section/Section";

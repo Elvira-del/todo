@@ -1,5 +1,5 @@
 import React from "react";
-import { TaskCard } from "../TaskCard/TaskCard";
+import { TaskCard } from "../../molecules/TaskCard/TaskCard";
 import { StyledTaskList } from "../../../styles/components";
 import { Task } from "../TaskApp";
 
