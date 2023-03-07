@@ -1,17 +1,17 @@
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Title3 } from "../../../styles/components";
-import { Button } from "../../atoms/button/Button";
-import { Checkbox } from "components/atoms/checkbox/Checkbox";
+import Button from "../../atoms/button/Button";
+import Checkbox from "components/atoms/checkbox/Checkbox";
 import { Task } from "../../pages/TaskApp/TaskApp";
-import { InputText } from "components/atoms/input/InputText";
+import InputText from "components/atoms/input/InputText";
 import * as Styled from "./StyledTaskCard";
 
-interface TaskCardProps {
+type TaskCardProps = {
   task: Task;
   onDelete: (id: string) => void;
   onComplete: (task: any) => void;
   onEdit: (task: any) => void;
-}
+};
 
 export const TaskCard = ({
   task,
@@ -46,9 +46,9 @@ export const TaskCard = ({
 
           <Styled.TaskButtonWrap>
             <Button
-              buttonColor="success"
-              onClick={() => setIsEditing(false)}
               type="button"
+              className="success"
+              onClick={() => setIsEditing(false)}
             >
               Save
             </Button>
@@ -61,14 +61,14 @@ export const TaskCard = ({
           <Styled.TaskButtonWrap>
             <Button
               type="button"
-              buttonColor="primary"
+              className="primary"
               onClick={() => handleEditTask(task)}
             >
               Edit
             </Button>
             <Button
               type="button"
-              buttonColor="secondary"
+              className="secondary"
               onClick={() => onDelete(task.id)}
             >
               Delete

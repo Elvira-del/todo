@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocalStorage } from "hooks/useLocalStorage";
 import { Header } from "../../organisms/Header/Header";
 import { AddTaskForm } from "../../molecules/AddTaskForm/AddTaskForm";
@@ -8,11 +7,11 @@ import { Section } from "components/templates/Section/Section";
 import idGenerate from "utils/idGenerate";
 import Footer from "../../organisms/Footer/Footer";
 
-export interface Task {
+export type Task = {
   id: string;
   text: string;
   done: boolean;
-}
+};
 
 export const TaskApp = () => {
   const [tasks, setTasks] = useLocalStorage<Task[]>("localTasks", []);

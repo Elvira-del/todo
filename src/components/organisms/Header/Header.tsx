@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "../../../styles/components";
 import * as Styled from "./StyledHeader";
 

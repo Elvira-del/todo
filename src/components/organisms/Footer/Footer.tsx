@@ -1,11 +1,10 @@
-import React from "react";
 import { Container } from "styles/components";
 import { Task } from "../../pages/TaskApp/TaskApp";
 import * as Styled from "./StyledFooter";
 
-interface FooterProps {
+type FooterProps = {
   tasks: Task[];
-}
+};
 
 const Footer = ({ tasks }: FooterProps) => {
   const completed = tasks.filter((task) => task.done);
