@@ -1,7 +1,7 @@
 import React from "react";
 import { TaskCard } from "../../molecules/TaskCard/TaskCard";
 import { StyledTaskList } from "../../../styles/components";
-import { Task } from "../TaskApp";
+import { Task } from "../../TaskApp/TaskApp";
 
 interface TaskListProps {
   tasks: Task[];
