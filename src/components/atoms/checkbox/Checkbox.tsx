@@ -1,46 +1,24 @@
-import { ComponentPropsWithoutRef } from "react";
-import styled from "styled-components";
+import { ChangeEventHandler, InputHTMLAttributes } from "react";
+import { Label, HiddenCheckbox } from "./style";
 
-const Label = styled.label`
-  display: flex;
-  align-items: center;
-`;
-
-const HiddenCheckbox = styled.input`
-  position: relative;
-  appearance: none;
-  width: 1.6em;
-  height: 1.6em;
-  border: 2px solid #007a7e;
-  border-radius: 50%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 1em;
-    height: 1em;
-    background-color: #007a7e;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity ${({ theme }) => theme.durations.ms300}ms ease-in-out;
-  }
-
-  &:checked::before {
-    opacity: 1;
-  }
-`;
-
-interface CheckboxProps extends ComponentPropsWithoutRef<"input"> {
+type CheckboxProps = {
   checked: boolean;
   id: string;
-}
+  onChange: ChangeEventHandler;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const Checkbox = ({ checked, id, ...rest }: CheckboxProps) => {
+const Checkbox = ({ checked, id, onChange, ...rest }: CheckboxProps) => {
   return (
     <Label htmlFor={id}>
-      <HiddenCheckbox type="checkbox" checked={checked} id={id} {...rest} />
+      <HiddenCheckbox
+        type="checkbox"
+        checked={checked}
+        id={id}
+        onChange={onChange}
+        {...rest}
+      />
     </Label>
   );
 };
+
+export default Checkbox;

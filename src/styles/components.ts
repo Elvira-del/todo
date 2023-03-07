@@ -39,39 +39,6 @@ export const Title3 = styled.h3<TitleProps>`
   color: ${({ theme }) => theme.colors.font};
 `;
 
-interface ButtonUIProps {
-  bg: string;
-}
-
-export const ButtonUI = styled.button<ButtonUIProps>`
-  padding: 10px;
-  max-width: 100px;
-  width: 100%;
-  border-radius: ${({ theme }) => theme.border.radius}px;
-  ${({ bg, theme }) => {
-    switch (bg) {
-      case "success":
-        return css`
-          background-color: ${theme.colors.success};
-        `;
-      case "secondary":
-        return css`
-          background-color: ${theme.colors.secondary};
-        `;
-      case "disabled":
-        return css`
-          background-color: ${theme.colors.disabled};
-        `;
-      default:
-        return css`
-          background-color: ${theme.colors.primary};
-        `;
-    }
-  }};
-  font-weight: 700;
-  color: #ffffff;
-`;
-
 export const StyledTaskList = styled.ul`
   display: flex;
   flex-direction: column;

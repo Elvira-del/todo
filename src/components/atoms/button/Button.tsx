@@ -1,15 +1,18 @@
-import React, { ComponentPropsWithoutRef, ReactNode } from "react";
-import { ButtonUI } from "../../../styles/components";
+import { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
+import { ButtonUI } from "./style";
 
-interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  buttonColor: string;
+type ButtonProps = {
+  className: string;
   children: ReactNode;
-}
+  onClick?: MouseEventHandler;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ buttonColor, children, ...other }: ButtonProps) => {
+const Button = ({ className, children, onClick, ...rest }: ButtonProps) => {
   return (
-    <ButtonUI bg={buttonColor} {...other}>
+    <ButtonUI bg={className} onClick={onClick} {...rest}>
       {children}
     </ButtonUI>
   );
 };
+
+export default Button;

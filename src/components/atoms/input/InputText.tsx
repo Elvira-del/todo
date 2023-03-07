@@ -1,14 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import { ChangeEventHandler, InputHTMLAttributes } from "react";
+import { Input } from "./style";
 
-const Input = styled.input`
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.font};
-  border-radius: ${({ theme }) => theme.border.radius}px;
-`;
+type InputTextProps = {
+  onChange: ChangeEventHandler;
+} & InputHTMLAttributes<HTMLInputElement>;
 
-export const InputText = ({ ...rest }) => {
-  return <Input type="text" {...rest} />;
+const InputText = ({ onChange, ...rest }: InputTextProps) => {
+  return <Input type="text" onChange={onChange} {...rest} />;
 };
+
+export default InputText;
