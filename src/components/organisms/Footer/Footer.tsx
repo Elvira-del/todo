@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "styles/components";
-import { Task } from "../TaskApp";
+import { Task } from "../../pages/TaskApp/TaskApp";
 import * as Styled from "./StyledFooter";
 
 interface FooterProps {
