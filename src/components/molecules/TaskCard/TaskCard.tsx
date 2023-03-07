@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import { Title3 } from "../../../styles/components";
 import { Button } from "../../atoms/button/Button";
 import { Checkbox } from "components/atoms/checkbox/Checkbox";
-import { Task } from "../../TaskApp/TaskApp";
+import { Task } from "../../pages/TaskApp/TaskApp";
 import { InputText } from "components/atoms/input/InputText";
 import * as Styled from "./StyledTaskCard";
 

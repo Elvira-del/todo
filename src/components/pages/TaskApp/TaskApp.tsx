@@ -1,12 +1,12 @@
 import React from "react";
 import { useLocalStorage } from "core/hooks/hooks";
-import { Header } from "./Header/Header";
-import { AddTaskForm } from "../molecules/AddTaskForm/AddTaskForm";
-import { Title2 } from "../../styles/components";
-import { TaskList } from "../organisms/TaskList/TaskList";
+import { Header } from "../../organisms/Header/Header";
+import { AddTaskForm } from "../../molecules/AddTaskForm/AddTaskForm";
+import { Title2 } from "../../../styles/components";
+import { TaskList } from "../../organisms/TaskList/TaskList";
 import { Section } from "components/templates/Section/Section";
 import idGenerate from "core/utils/idGenerate";
-import Footer from "./Footer/Footer";
+import Footer from "../../organisms/Footer/Footer";
 
 export interface Task {
   id: string;

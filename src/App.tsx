@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { baseTheme } from "./styles/theme";
 import GlobalStyle from "./styles/global";
 
-import { TaskApp } from "./components/TaskApp/TaskApp";
+import { TaskApp } from "./components/pages/TaskApp/TaskApp";
 
 function App() {
   return (
