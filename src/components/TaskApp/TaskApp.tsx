@@ -4,7 +4,7 @@ import { Header } from "./Header/Header";
 import { AddTaskForm } from "../molecules/AddTaskForm/AddTaskForm";
 import { Title2 } from "../../styles/components";
 import { TaskList } from "../organisms/TaskList/TaskList";
-import { Section } from "components/TaskApp/Section/Section";
+import { Section } from "components/templates/Section/Section";
 import idGenerate from "core/utils/idGenerate";
 import Footer from "./Footer/Footer";
 
