@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocalStorage } from "core/hooks/hooks";
+import { useLocalStorage } from "core/hooks/useLocalStorage";
 import { Header } from "../../organisms/Header/Header";
 import { AddTaskForm } from "../../molecules/AddTaskForm/AddTaskForm";
 import { Title2 } from "../../../styles/components";
