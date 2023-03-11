@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Title1 } from "styles/components";
 
-export const Header = styled.header`
+export const HeaderSection = styled.header`
   height: ${({ theme }) => theme.sizes.header.height}px;
   margin-bottom: 30px;
 `;

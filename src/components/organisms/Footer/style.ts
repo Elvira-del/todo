@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Footer = styled.footer`
+export const FooterSection = styled.footer`
   height: ${({ theme }) => theme.sizes.footer.height}px;
 `;
 

@@ -1,11 +1,11 @@
 import { useLocalStorage } from "hooks/useLocalStorage";
-import { Header } from "../../organisms/Header/Header";
-import { AddTaskForm } from "../../molecules/AddTaskForm/AddTaskForm";
-import { Title2 } from "../../../styles/components";
-import { TaskList } from "../../organisms/TaskList/TaskList";
-import { Section } from "components/templates/Section/Section";
 import idGenerate from "utils/idGenerate";
-import Footer from "../../organisms/Footer/Footer";
+import Header from "components/organisms/Header";
+import AddTaskForm from "components/molecules/AddTaskForm";
+import TaskList from "components/organisms/TaskList";
+import Section from "components/templates/Section";
+import Footer from "components/organisms/Footer";
+import { Title2 } from "../../../styles/components";
 
 export type Task = {
   id: string;
@@ -13,7 +13,7 @@ export type Task = {
   done: boolean;
 };
 
-export const TaskApp = () => {
+const TaskApp = () => {
   const [tasks, setTasks] = useLocalStorage<Task[]>("localTasks", []);
 
   const handleAddTask = (text: string) => {
@@ -70,3 +70,5 @@ export const TaskApp = () => {
     </>
   );
 };
+
+export default TaskApp;

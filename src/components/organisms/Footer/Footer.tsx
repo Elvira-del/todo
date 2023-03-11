@@ -1,6 +1,6 @@
 import { Container } from "styles/components";
-import { Task } from "../../pages/TaskApp/TaskApp";
-import * as Styled from "./StyledFooter";
+import { Task } from "components/pages/TaskApp/TaskApp";
+import { FooterSection, FooterWrapper } from "./style";
 
 type FooterProps = {
   tasks: Task[];
@@ -10,16 +10,16 @@ const Footer = ({ tasks }: FooterProps) => {
   const completed = tasks.filter((task) => task.done);
 
   return (
-    <Styled.Footer>
+    <FooterSection>
       <Container>
         <hr />
-        <Styled.FooterWrapper>
+        <FooterWrapper>
           <span>
             Completed: {completed.length} / Total: {tasks.length}
           </span>
-        </Styled.FooterWrapper>
+        </FooterWrapper>
       </Container>
-    </Styled.Footer>
+    </FooterSection>
   );
 };
 

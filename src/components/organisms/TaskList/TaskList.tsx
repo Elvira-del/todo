@@ -1,6 +1,6 @@
-import { TaskCard } from "../../molecules/TaskCard/TaskCard";
-import { StyledTaskList } from "../../../styles/components";
-import { Task } from "../../pages/TaskApp/TaskApp";
+import TaskCard from "components/molecules/TaskCard";
+import { Task } from "components/pages/TaskApp/TaskApp";
+import { List } from "./style";
 
 type TaskListProps = {
   tasks: Task[];
@@ -9,14 +9,14 @@ type TaskListProps = {
   onEditTask: (task: any) => void;
 };
 
-export const TaskList = ({
+const TaskList = ({
   tasks,
   onDeleteTask,
   onCompleteTask,
   onEditTask,
 }: TaskListProps) => {
   return (
-    <StyledTaskList>
+    <List>
       {tasks.map((task) => (
         <TaskCard
           key={task.id}
@@ -26,6 +26,8 @@ export const TaskList = ({
           onEdit={onEditTask}
         />
       ))}
-    </StyledTaskList>
+    </List>
   );
 };
+
+export default TaskList;

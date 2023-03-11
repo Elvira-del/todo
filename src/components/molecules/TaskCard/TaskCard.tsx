@@ -1,10 +1,10 @@
 import { ChangeEvent, useState } from "react";
 import { Title3 } from "../../../styles/components";
-import Button from "../../atoms/button/Button";
-import Checkbox from "components/atoms/checkbox/Checkbox";
-import { Task } from "../../pages/TaskApp/TaskApp";
-import InputText from "components/atoms/input/InputText";
-import * as Styled from "./StyledTaskCard";
+import Button from "components/atoms/button";
+import Checkbox from "components/atoms/checkbox";
+import InputText from "components/atoms/input";
+import { Task } from "components/pages/TaskApp/TaskApp";
+import { Card, Content, ButtonWrap } from "./style";
 
 type TaskCardProps = {
   task: Task;
@@ -13,12 +13,7 @@ type TaskCardProps = {
   onEdit: (task: any) => void;
 };
 
-export const TaskCard = ({
-  task,
-  onDelete,
-  onComplete,
-  onEdit,
-}: TaskCardProps) => {
+const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleCheckTask = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,11 +26,11 @@ export const TaskCard = ({
   };
 
   return (
-    <Styled.TaskCard>
+    <Card>
       <Checkbox checked={task.done} id={task.id} onChange={handleCheckTask} />
 
       {isEditing ? (
-        <Styled.TaskContent>
+        <Content>
           <InputText
             value={task.text}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -44,7 +39,7 @@ export const TaskCard = ({
             title="Change your task"
           />
 
-          <Styled.TaskButtonWrap>
+          <ButtonWrap>
             <Button
               type="button"
               className="success"
@@ -52,13 +47,13 @@ export const TaskCard = ({
             >
               Save
             </Button>
-          </Styled.TaskButtonWrap>
-        </Styled.TaskContent>
+          </ButtonWrap>
+        </Content>
       ) : (
-        <Styled.TaskContent done={task.done}>
+        <Content done={task.done}>
           <Title3>{task.text}</Title3>
 
-          <Styled.TaskButtonWrap>
+          <ButtonWrap>
             <Button
               type="button"
               className="primary"
@@ -73,9 +68,11 @@ export const TaskCard = ({
             >
               Delete
             </Button>
-          </Styled.TaskButtonWrap>
-        </Styled.TaskContent>
+          </ButtonWrap>
+        </Content>
       )}
-    </Styled.TaskCard>
+    </Card>
   );
 };
+
+export default TaskCard;

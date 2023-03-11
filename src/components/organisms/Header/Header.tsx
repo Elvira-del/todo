@@ -1,14 +1,16 @@
 import { Container } from "../../../styles/components";
-import * as Styled from "./StyledHeader";
+import { HeaderSection, HeaderWrapper, HeaderTitle } from "./style";
 
-export const Header = () => {
+const Header = () => {
   return (
-    <Styled.Header>
+    <HeaderSection>
       <Container>
-        <Styled.HeaderWrapper>
-          <Styled.HeaderTitle>To-Do List</Styled.HeaderTitle>
-        </Styled.HeaderWrapper>
+        <HeaderWrapper>
+          <HeaderTitle>To-Do List</HeaderTitle>
+        </HeaderWrapper>
       </Container>
-    </Styled.Header>
+    </HeaderSection>
   );
 };
+
+export default Header;

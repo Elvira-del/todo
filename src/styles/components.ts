@@ -38,9 +38,3 @@ export const Title3 = styled.h3<TitleProps>`
   font-weight: ${({ weight = 500 }) => weight};
   color: ${({ theme }) => theme.colors.font};
 `;
-
-export const StyledTaskList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  row-gap: 5px;
-`;

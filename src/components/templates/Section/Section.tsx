@@ -1,15 +1,17 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Container } from "styles/components";
-import * as Styled from "./StyledSection";
+import * as Styled from "./style";
 
-interface SectionProps {
-  children: React.ReactNode;
-}
+type SectionProps = {
+  children: ReactNode;
+};
 
-export const Section = ({ children }: SectionProps) => {
+const Section = ({ children }: SectionProps) => {
   return (
     <Styled.Section>
       <Container>{children}</Container>
     </Styled.Section>
   );
 };
+
+export default Section;

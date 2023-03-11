@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Title3 } from "../../../styles/components";
 
-export const TaskCard = styled.li`
+type TaskContentProps = {
+  done?: boolean;
+};
+
+export const Card = styled.li`
   display: flex;
   align-items: center;
   column-gap: 10px;
@@ -14,11 +18,7 @@ export const TaskCard = styled.li`
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 `;
 
-interface TaskContentProps {
-  done?: boolean;
-}
-
-export const TaskContent = styled.div<TaskContentProps>`
+export const Content = styled.div<TaskContentProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +32,7 @@ export const TaskContent = styled.div<TaskContentProps>`
   }
 `;
 
-export const TaskButtonWrap = styled.div`
+export const ButtonWrap = styled.div`
   display: flex;
   column-gap: 10px;
 `;

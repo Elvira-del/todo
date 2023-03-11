@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "../../atoms/button/Button";
-import * as Styled from "./StyledAddTaskForm";
-import InputText from "components/atoms/input/InputText";
+import Button from "components/atoms/button";
+import InputText from "components/atoms/input";
+import { TaskForm, LabelTaskForm } from "./style";
 
 type AddTaskFormProps = {
   onAddTask: (text: string) => void;
 };
 
-export const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
+const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
   const [text, setText] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
 
@@ -27,15 +27,15 @@ export const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
 
   return (
     <>
-      <Styled.TaskForm onSubmit={handleSubmitTask}>
-        <Styled.LabelTaskForm>
+      <TaskForm onSubmit={handleSubmitTask}>
+        <LabelTaskForm>
           <InputText
             value={text}
             onChange={handleChangeTitle}
             id="titleTask"
             placeholder="Add your task"
           />
-        </Styled.LabelTaskForm>
+        </LabelTaskForm>
 
         <Button
           type="submit"
@@ -44,7 +44,9 @@ export const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
         >
           Add
         </Button>
-      </Styled.TaskForm>
+      </TaskForm>
     </>
   );
 };
+
+export default AddTaskForm;
