@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TaskForm = styled.form`
   display: flex;
   column-gap: 10px;
+  margin-bottom: 30px;
   width: 100%;
 `;
 

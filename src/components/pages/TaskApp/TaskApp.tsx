@@ -50,9 +50,7 @@ export const TaskApp = () => {
       <main>
         <Section>
           <AddTaskForm onAddTask={handleAddTask} />
-        </Section>
 
-        <Section>
           <Title2>Tasks</Title2>
 
           {tasks.length ? (
