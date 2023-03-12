@@ -7,6 +7,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  *:focus-visible {
+    outline: none;
+  }
+
   body {
     color: ${({ theme }) => theme.colors.font};
   }  

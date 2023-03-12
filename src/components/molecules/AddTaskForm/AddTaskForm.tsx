@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import Button from "components/atoms/button";
 import InputText from "components/atoms/input";
 import { TaskForm, LabelTaskForm } from "./style";
@@ -10,6 +10,13 @@ type AddTaskFormProps = {
 const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
   const [text, setText] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef) {
+      inputRef.current?.focus();
+    }
+  }, []);
 
   const handleChangeTitle = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
@@ -32,6 +39,7 @@ const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
           <InputText
             value={text}
             onChange={handleChangeTitle}
+            ref={inputRef}
             id="titleTask"
             placeholder="Add your task"
           />
