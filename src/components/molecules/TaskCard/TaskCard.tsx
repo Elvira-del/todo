@@ -1,28 +1,40 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { Title3 } from "../../../styles/components";
 import Button from "components/atoms/button";
 import Checkbox from "components/atoms/checkbox";
 import InputText from "components/atoms/input";
 import { Task } from "components/pages/TaskApp/TaskApp";
-import { Card, Content, ButtonWrap } from "./style";
+import { Card, Content, Form, ButtonWrap } from "./style";
 
 type TaskCardProps = {
   task: Task;
   onDelete: (id: string) => void;
-  onComplete: (task: any) => void;
-  onEdit: (task: any) => void;
+  onComplete: (task: Task) => void;
+  onEdit: (task: Task) => void;
 };
 
 const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
   const [isEditing, setIsEditing] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isEditing) {
+      inputRef.current?.focus();
+    }
+  }, [isEditing]);
 
   const handleCheckTask = (e: ChangeEvent<HTMLInputElement>) => {
     onComplete({ ...task, done: e.target.checked });
   };
 
-  const handleEditTask = (task: any) => {
+  const handleEditTask = (task: Task) => {
     setIsEditing(true);
     onEdit(task);
+  };
+
+  const handleSaveTask = (e: FormEvent) => {
+    e.preventDefault();
+    setIsEditing(false);
   };
 
   return (
@@ -31,23 +43,22 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
 
       {isEditing ? (
         <Content>
-          <InputText
-            value={task.text}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              onEdit({ ...task, text: e.target.value })
-            }
-            title="Change your task"
-          />
+          <Form onSubmit={handleSaveTask}>
+            <InputText
+              value={task.text}
+              ref={inputRef}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                onEdit({ ...task, text: e.target.value })
+              }
+              title="Change your task"
+            />
 
-          <ButtonWrap>
-            <Button
-              type="button"
-              className="success"
-              onClick={() => setIsEditing(false)}
-            >
-              Save
-            </Button>
-          </ButtonWrap>
+            <ButtonWrap>
+              <Button type="submit" className="success">
+                Save
+              </Button>
+            </ButtonWrap>
+          </Form>
         </Content>
       ) : (
         <Content done={task.done}>

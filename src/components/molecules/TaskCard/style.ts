@@ -32,6 +32,12 @@ export const Content = styled.div<TaskContentProps>`
   }
 `;
 
+export const Form = styled.form`
+  display: flex;
+  column-gap: 10px;
+  width: 100%;
+`;
+
 export const ButtonWrap = styled.div`
   display: flex;
   column-gap: 10px;
