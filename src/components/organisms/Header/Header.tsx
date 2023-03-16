@@ -1,4 +1,4 @@
-import { Container } from "../../../styles/components";
+import { Container } from "components/templates/style";
 import { HeaderSection, HeaderWrapper, HeaderTitle } from "./style";
 
 const Header = () => {

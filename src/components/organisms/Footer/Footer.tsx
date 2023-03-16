@@ -1,4 +1,4 @@
-import { Container } from "styles/components";
+import { Container } from "components/templates/style";
 import { Task } from "components/pages/TaskApp/TaskApp";
 import { FooterSection, FooterWrapper } from "./style";
 

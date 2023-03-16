@@ -3,7 +3,7 @@ import idGenerate from "utils/idGenerate";
 import Header from "components/organisms/Header";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
-import Section from "components/templates/Section";
+import { Section, Container } from "components/templates/style";
 import Footer from "components/organisms/Footer";
 import { Title2 } from "../../../styles/components";
 
@@ -49,20 +49,22 @@ const TaskApp = () => {
 
       <main>
         <Section>
-          <AddTaskForm onAddTask={handleAddTask} />
+          <Container>
+            <AddTaskForm onAddTask={handleAddTask} />
 
-          <Title2>Tasks</Title2>
+            <Title2>Tasks</Title2>
 
-          {tasks.length ? (
-            <TaskList
-              tasks={tasks}
-              onDeleteTask={handleDeleteTask}
-              onCompleteTask={handleCompleteTask}
-              onEditTask={handleEditTask}
-            />
-          ) : (
-            <span>No tasks</span>
-          )}
+            {tasks.length ? (
+              <TaskList
+                tasks={tasks}
+                onDeleteTask={handleDeleteTask}
+                onCompleteTask={handleCompleteTask}
+                onEditTask={handleEditTask}
+              />
+            ) : (
+              <span>No tasks</span>
+            )}
+          </Container>
         </Section>
       </main>
 
