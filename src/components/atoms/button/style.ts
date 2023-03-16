@@ -8,7 +8,7 @@ export const ButtonUI = styled.button<ButtonUIProps>`
   padding: 10px;
   max-width: 100px;
   width: 100%;
-  border-radius: ${({ theme }) => theme.border.radius}px;
+  border-radius: ${({ theme }) => theme.border.radius};
   ${({ bg, theme }) => {
     switch (bg) {
       case "success":

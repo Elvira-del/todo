@@ -17,10 +17,10 @@ declare module "styled-components" {
     };
 
     sizes: {
-      container: { maxWidth: number };
-      header: { height: number };
-      footer: { height: number };
-      task: { minWidth: number };
+      container: { maxWidth: string };
+      header: { height: string };
+      footer: { height: string };
+      task: { minWidth: string };
     };
 
     align: {
@@ -28,11 +28,11 @@ declare module "styled-components" {
     };
 
     border: {
-      radius: number;
+      radius: string;
     };
 
     durations: {
-      ms300: number;
+      ms300: string;
     };
   }
 }

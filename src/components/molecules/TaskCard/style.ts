@@ -12,9 +12,9 @@ export const Card = styled.li`
   padding: 10px;
   width: 100%;
   height: 100%;
-  min-width: ${({ theme }) => theme.sizes.task.minWidth}px;
+  min-width: ${({ theme }) => theme.sizes.task.minWidth};
   min-height: 50px;
-  border-radius: ${({ theme }) => theme.border.radius}px;
+  border-radius: ${({ theme }) => theme.border.radius};
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 `;
 
@@ -26,7 +26,7 @@ export const Content = styled.div<TaskContentProps>`
   width: 100%;
 
   ${Title3} {
-    transition: all ${({ theme }) => theme.durations.ms300}ms linear;
+    transition: all ${({ theme }) => theme.durations.ms300} ease-in-out;
     text-decoration: ${({ done }) => (done ? "line-through" : "none")};
     color: ${({ done }) => (done ? "#999999" : "")};
   }

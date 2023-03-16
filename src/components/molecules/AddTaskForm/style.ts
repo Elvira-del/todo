@@ -7,9 +7,7 @@ export const TaskForm = styled.form`
   width: 100%;
 `;
 
-export const LabelTaskForm = styled.label.attrs({
-  htmlFor: "titleTask",
-})`
+export const LabelTaskForm = styled.label`
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -17,10 +17,10 @@ export const baseTheme: DefaultTheme = {
 
   // in px
   sizes: {
-    container: { maxWidth: 1400 },
-    header: { height: 60 },
-    footer: { height: 60 },
-    task: { minWidth: 250 },
+    container: { maxWidth: "1400px" },
+    header: { height: "60px" },
+    footer: { height: "60px" },
+    task: { minWidth: "250px" },
   },
 
   align: {
@@ -28,11 +28,10 @@ export const baseTheme: DefaultTheme = {
   },
 
   border: {
-    radius: 10,
+    radius: "10px",
   },
 
-  // in ms
   durations: {
-    ms300: 300,
+    ms300: "300ms",
   },
 };

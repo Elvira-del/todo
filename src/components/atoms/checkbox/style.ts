@@ -8,8 +8,8 @@ export const Label = styled.label`
 export const HiddenCheckbox = styled.input`
   position: relative;
   appearance: none;
-  width: 1.6em;
-  height: 1.6em;
+  width: 21px;
+  height: 21px;
   border: 2px solid #007a7e;
   border-radius: 50%;
 
@@ -18,12 +18,12 @@ export const HiddenCheckbox = styled.input`
     position: absolute;
     top: 2px;
     left: 2px;
-    width: 1em;
-    height: 1em;
+    width: 13px;
+    height: 13px;
     background-color: #007a7e;
     border-radius: 50%;
     opacity: 0;
-    transition: opacity ${({ theme }) => theme.durations.ms300}ms ease-in-out;
+    transition: opacity ${({ theme }) => theme.durations.ms300} ease-in-out;
   }
 
   &:checked::before {

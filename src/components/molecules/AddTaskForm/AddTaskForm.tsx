@@ -35,7 +35,7 @@ const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
   return (
     <>
       <TaskForm onSubmit={handleSubmitTask}>
-        <LabelTaskForm>
+        <LabelTaskForm htmlFor="titleTask">
           <InputText
             value={text}
             onChange={handleChangeTitle}

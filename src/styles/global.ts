@@ -7,7 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
-  *:focus-visible {
+  *:focus {
     outline: none;
   }
 

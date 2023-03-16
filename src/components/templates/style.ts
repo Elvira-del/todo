@@ -11,7 +11,7 @@ export const Section = styled.section`
 export const Container = styled.div<ContainerProps>`
   margin: ${({ theme }) => theme.align.center};
   padding: ${({ horizontal = 50 }) => `0px ${horizontal}px`};
-  max-width: ${({ theme }) => theme.sizes.container.maxWidth}px;
+  max-width: ${({ theme }) => theme.sizes.container.maxWidth};
   width: 100%;
 
   @media ${({ theme }) => theme.media.medium} {
