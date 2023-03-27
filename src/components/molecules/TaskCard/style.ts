@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Title3 } from "../../../styles/components";
+import Title from "components/atoms/title/Title";
 
 type TaskContentProps = {
   done?: boolean;
@@ -18,6 +18,8 @@ export const Card = styled.li`
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 `;
 
+export const TaskTitle = styled(Title)``;
+
 export const Content = styled.div<TaskContentProps>`
   display: flex;
   justify-content: space-between;
@@ -25,7 +27,7 @@ export const Content = styled.div<TaskContentProps>`
   column-gap: 10px;
   width: 100%;
 
-  ${Title3} {
+  ${TaskTitle} {
     transition: all ${({ theme }) => theme.durations.ms300} ease-in-out;
     text-decoration: ${({ done }) => (done ? "line-through" : "none")};
     color: ${({ done }) => (done ? "#999999" : "")};

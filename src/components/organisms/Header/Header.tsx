@@ -6,7 +6,9 @@ const Header = () => {
     <HeaderSection>
       <Container>
         <HeaderWrapper>
-          <HeaderTitle>To-Do List</HeaderTitle>
+          <HeaderTitle size={32} weight={700} tag="h1">
+            To-Do List
+          </HeaderTitle>
         </HeaderWrapper>
       </Container>
     </HeaderSection>

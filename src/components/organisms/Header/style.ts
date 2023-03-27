@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Title1 } from "styles/components";
+import Title from "components/atoms/title/Title";
 
 export const HeaderSection = styled.header`
   height: ${({ theme }) => theme.sizes.header.height};
@@ -13,6 +13,4 @@ export const HeaderWrapper = styled.div`
   padding: 10px 0;
 `;
 
-export const HeaderTitle = styled(Title1)`
-  margin: 0 auto;
-`;
+export const HeaderTitle = styled(Title)``;

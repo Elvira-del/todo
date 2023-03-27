@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Title from "components/atoms/title/Title";
 
 type ContainerProps = {
   horizontal?: number;
@@ -7,6 +8,8 @@ type ContainerProps = {
 export const Section = styled.section`
   margin-bottom: 30px;
 `;
+
+export const Main = styled.main``;
 
 export const Container = styled.div<ContainerProps>`
   margin: ${({ theme }) => theme.align.center};
@@ -17,4 +20,8 @@ export const Container = styled.div<ContainerProps>`
   @media ${({ theme }) => theme.media.medium} {
     padding: ${({ horizontal = 30 }) => `0px ${horizontal}px`};
   }
+`;
+
+export const TaskPanelTitle = styled(Title)`
+  margin-bottom: 15px;
 `;

@@ -3,9 +3,13 @@ import idGenerate from "utils/idGenerate";
 import Header from "components/organisms/Header";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
-import { Section, Container } from "components/templates/style";
 import Footer from "components/organisms/Footer";
-import { Title2 } from "../../../styles/components";
+import {
+  Section,
+  Main,
+  Container,
+  TaskPanelTitle,
+} from "components/templates/style";
 
 export type Task = {
   id: string;
@@ -20,7 +24,7 @@ const TaskApp = () => {
     setTasks([...tasks, { id: idGenerate(), text, done: false }]);
   };
 
-  const handleEditTask = (editTask: any) => {
+  const handleEditTask = (editTask: Task) => {
     setTasks(
       tasks.map((task) => {
         if (task.id === editTask.id) {
@@ -36,7 +40,7 @@ const TaskApp = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const handleCompleteTask = (doneTask: any) => {
+  const handleCompleteTask = (doneTask: Task) => {
     const completed = tasks.map((task) =>
       task.id === doneTask.id ? { ...task, done: doneTask.done } : task
     );
@@ -47,12 +51,14 @@ const TaskApp = () => {
     <>
       <Header />
 
-      <main>
+      <Main>
         <Section>
           <Container>
             <AddTaskForm onAddTask={handleAddTask} />
 
-            <Title2>Tasks</Title2>
+            <TaskPanelTitle size={24} weight={700} tag="h2">
+              Tasks
+            </TaskPanelTitle>
 
             {tasks.length ? (
               <TaskList
@@ -66,7 +72,7 @@ const TaskApp = () => {
             )}
           </Container>
         </Section>
-      </main>
+      </Main>
 
       <Footer tasks={tasks} />
     </>

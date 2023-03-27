@@ -1,10 +1,9 @@
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
-import { Title3 } from "../../../styles/components";
 import Button from "components/atoms/button";
 import Checkbox from "components/atoms/checkbox";
 import InputText from "components/atoms/input";
 import { Task } from "components/pages/TaskApp/TaskApp";
-import { Card, Content, Form, ButtonWrap } from "./style";
+import { Card, Content, TaskTitle, Form, ButtonWrap } from "./style";
 
 type TaskCardProps = {
   task: Task;
@@ -62,7 +61,9 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
         </Content>
       ) : (
         <Content done={task.done}>
-          <Title3>{task.text}</Title3>
+          <TaskTitle size={18} weight={500} tag="h3">
+            {task.text}
+          </TaskTitle>
 
           <ButtonWrap>
             <Button
