@@ -18,7 +18,9 @@ export const Card = styled.li`
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
 `;
 
-export const TaskTitle = styled(Title)``;
+export const TaskTitle = styled(Title)`
+  word-break: break-word;
+`;
 
 export const Content = styled.div<TaskContentProps>`
   display: flex;

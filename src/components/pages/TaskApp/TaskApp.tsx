@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "hooks/useLocalStorage";
 import idGenerate from "utils/idGenerate";
 import Header from "components/organisms/Header";
@@ -52,6 +52,10 @@ const TaskApp = () => {
     [tasks, setTasks]
   );
 
+  const completedTask = useMemo(() => {
+    return tasks.filter((task) => task.done);
+  }, [tasks]);
+
   return (
     <>
       <Header />
@@ -79,7 +83,7 @@ const TaskApp = () => {
         </Section>
       </Main>
 
-      <Footer tasks={tasks} />
+      <Footer completed={completedTask.length} total={tasks.length} />
     </>
   );
 };
