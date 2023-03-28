@@ -8,7 +8,7 @@ import { Card, Content, TaskTitle, Form, ButtonWrap } from "./style";
 type TaskCardProps = {
   task: Task;
   onDelete: (id: string) => void;
-  onComplete: (task: Task) => void;
+  onComplete: (id: string) => void;
   onEdit: (task: Task) => void;
 };
 
@@ -22,8 +22,8 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
     }
   }, [isEditing]);
 
-  const handleCheckTask = (e: ChangeEvent<HTMLInputElement>) => {
-    onComplete({ ...task, done: e.target.checked });
+  const handleCheckTask = () => {
+    onComplete(task.id);
   };
 
   const handleEditTask = (task: Task) => {

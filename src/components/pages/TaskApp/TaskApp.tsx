@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useLocalStorage } from "hooks/useLocalStorage";
 import idGenerate from "utils/idGenerate";
 import Header from "components/organisms/Header";
@@ -40,12 +41,16 @@ const TaskApp = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const handleCompleteTask = (doneTask: Task) => {
-    const completed = tasks.map((task) =>
-      task.id === doneTask.id ? { ...task, done: doneTask.done } : task
-    );
-    setTasks(completed);
-  };
+  const handleCompleteTask = useCallback(
+    (id: string) => {
+      setTasks(
+        tasks.map((task) =>
+          task.id === id ? { ...task, done: !task.done } : task
+        )
+      );
+    },
+    [tasks, setTasks]
+  );
 
   return (
     <>

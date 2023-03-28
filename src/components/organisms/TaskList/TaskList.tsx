@@ -5,8 +5,8 @@ import { List } from "./style";
 type TaskListProps = {
   tasks: Task[];
   onDeleteTask: (id: string) => void;
-  onCompleteTask: (task: any) => void;
-  onEditTask: (task: any) => void;
+  onCompleteTask: (id: string) => void;
+  onEditTask: (task: Task) => void;
 };
 
 const TaskList = ({
