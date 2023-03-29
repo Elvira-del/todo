@@ -1,10 +1,23 @@
 {
   "files": {
-    "main.js": "/todo/static/js/main.ef480a13.js",
+    "main.css": "/todo/static/css/main.dec904b8.css",
+    "main.js": "/todo/static/js/main.9b906805.js",
+    "static/media/Alkatra-SemiBold.woff": "/todo/static/media/Alkatra-SemiBold.43019527d88b5020660d.woff",
+    "static/media/Alkatra-Bold.woff": "/todo/static/media/Alkatra-Bold.a3cff4441dd939b21334.woff",
+    "static/media/Alkatra-Regular.woff": "/todo/static/media/Alkatra-Regular.27d66aade2409aabb021.woff",
+    "static/media/Alkatra-SemiBold.woff2": "/todo/static/media/Alkatra-SemiBold.0437a36bc786de46e544.woff2",
+    "static/media/Alkatra-Bold.woff2": "/todo/static/media/Alkatra-Bold.d96a7e8a9ec34ac42341.woff2",
+    "static/media/Alkatra-Regular.woff2": "/todo/static/media/Alkatra-Regular.0970d1619956e05d2842.woff2",
+    "static/media/Montserrat-Medium.woff": "/todo/static/media/Montserrat-Medium.0249442d179f8442a6ec.woff",
+    "static/media/Montserrat-Regular.woff": "/todo/static/media/Montserrat-Regular.f8a540ba243870511806.woff",
+    "static/media/Montserrat-Medium.woff2": "/todo/static/media/Montserrat-Medium.be63c01697e50cedf607.woff2",
+    "static/media/Montserrat-Regular.woff2": "/todo/static/media/Montserrat-Regular.54e5ab38e7cf2d5499e6.woff2",
     "index.html": "/todo/index.html",
-    "main.ef480a13.js.map": "/todo/static/js/main.ef480a13.js.map"
+    "main.dec904b8.css.map": "/todo/static/css/main.dec904b8.css.map",
+    "main.9b906805.js.map": "/todo/static/js/main.9b906805.js.map"
   },
   "entrypoints": [
-    "static/js/main.ef480a13.js"
+    "static/css/main.dec904b8.css",
+    "static/js/main.9b906805.js"
   ]
 }
