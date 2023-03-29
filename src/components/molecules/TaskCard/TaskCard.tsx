@@ -61,7 +61,7 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
         </Content>
       ) : (
         <Content done={task.done}>
-          <TaskTitle size={18} weight={500} tag="h3">
+          <TaskTitle size={18} weight={400} tag="h3">
             {task.text}
           </TaskTitle>
 

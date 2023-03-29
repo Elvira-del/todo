@@ -10,6 +10,11 @@ export const baseTheme: DefaultTheme = {
     font: "#2b2b2b",
   },
 
+  fonts: {
+    main: "Montserrat, sans-serif",
+    cursive: "Alkatra, cursive",
+  },
+
   media: {
     medium: "(max-width: 720px)",
     small: "(max-width: 540px)",

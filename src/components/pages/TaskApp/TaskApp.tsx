@@ -75,7 +75,7 @@ const TaskApp = () => {
           <Container>
             <AddTaskForm onAddTask={handleAddTask} />
 
-            <TaskPanelTitle size={24} weight={700} tag="h2">
+            <TaskPanelTitle size={24} weight={600} tag="h2">
               Tasks
             </TaskPanelTitle>
 

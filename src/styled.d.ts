@@ -11,6 +11,11 @@ declare module "styled-components" {
       font: string;
     };
 
+    fonts: {
+      main: string;
+      cursive: string;
+    };
+
     media: {
       medium: string;
       small: string;

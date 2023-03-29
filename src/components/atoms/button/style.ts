@@ -29,6 +29,6 @@ export const ButtonUI = styled.button<ButtonUIProps>`
         `;
     }
   }};
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
 `;
