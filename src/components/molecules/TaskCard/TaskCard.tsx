@@ -31,6 +31,10 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
     onEdit(task);
   };
 
+  const handleChangeTaskContent = (e: ChangeEvent<HTMLInputElement>) => {
+    onEdit({ ...task, text: e.target.value });
+  };
+
   const handleSaveTask = (e: FormEvent) => {
     e.preventDefault();
     setIsEditing(false);
@@ -46,9 +50,7 @@ const TaskCard = ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
             <InputText
               value={task.text}
               ref={inputRef}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                onEdit({ ...task, text: e.target.value })
-              }
+              onChange={handleChangeTaskContent}
               title="Change your task"
             />
 

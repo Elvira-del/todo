@@ -28,15 +28,7 @@ const TaskApp = () => {
   };
 
   const handleEditTask = (editTask: Task) => {
-    setTasks(
-      tasks.map((task) => {
-        if (task.id === editTask.id) {
-          return editTask;
-        } else {
-          return task;
-        }
-      })
-    );
+    setTasks(tasks.map((task) => (task.id === editTask.id ? editTask : task)));
   };
 
   const handleDeleteTask = (id: string) => {
