@@ -22,6 +22,20 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
+export const Header = styled.header`
+  margin-bottom: 30px;
+  height: ${({ theme }) => theme.sizes.header.height};
+`;
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+`;
+
+export const HeaderTitle = styled(Title)``;
+
 export const TaskPanelTitle = styled(Title)`
   margin-bottom: 15px;
 `;

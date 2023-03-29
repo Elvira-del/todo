@@ -1,7 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { useLocalStorage } from "hooks/useLocalStorage";
 import idGenerate from "utils/idGenerate";
-import Header from "components/organisms/Header";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/organisms/Footer";
@@ -9,6 +8,9 @@ import {
   Section,
   Main,
   Container,
+  Header,
+  HeaderWrapper,
+  HeaderTitle,
   TaskPanelTitle,
 } from "components/templates/style";
 
@@ -58,7 +60,15 @@ const TaskApp = () => {
 
   return (
     <>
-      <Header />
+      <Header>
+        <Container>
+          <HeaderWrapper>
+            <HeaderTitle size={32} weight={700} tag="h1">
+              To-Do List
+            </HeaderTitle>
+          </HeaderWrapper>
+        </Container>
+      </Header>
 
       <Main>
         <Section>
