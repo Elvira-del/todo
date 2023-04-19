@@ -1,10 +1,10 @@
-import { ElementType, ReactNode } from "react";
+import { ReactNode } from "react";
 import { Heading } from "./style";
 
 type TitleProps = {
   size: number;
   weight: number;
-  tag: ElementType;
+  tag: "h1" | "h2" | "h3" | "h4";
   children: ReactNode;
 };
 

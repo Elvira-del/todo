@@ -1,14 +1,12 @@
-import { memo } from "react";
-import { Container } from "components/templates/style";
-import { FooterSection, FooterWrapper } from "./style";
+import { FooterBlock, Container, FooterWrapper } from "./style";
 
 type FooterProps = {
   completed: number;
   total: number;
 };
-const Footer = memo(({ completed, total }: FooterProps) => {
+const Footer = ({ completed, total }: FooterProps) => {
   return (
-    <FooterSection>
+    <FooterBlock>
       <Container>
         <hr />
         <FooterWrapper>
@@ -17,8 +15,8 @@ const Footer = memo(({ completed, total }: FooterProps) => {
           </span>
         </FooterWrapper>
       </Container>
-    </FooterSection>
+    </FooterBlock>
   );
-});
+};
 
 export default Footer;

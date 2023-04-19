@@ -5,11 +5,11 @@ type ContainerProps = {
   horizontal?: number;
 };
 
+export const MainBlock = styled.main``;
+
 export const Section = styled.section`
   margin-bottom: 30px;
 `;
-
-export const Main = styled.main``;
 
 export const Container = styled.div<ContainerProps>`
   margin: ${({ theme }) => theme.align.center};
@@ -22,7 +22,7 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
-export const Header = styled.header`
+export const HeaderBlock = styled.header`
   margin-bottom: 30px;
   height: ${({ theme }) => theme.sizes.header.height};
 `;
@@ -38,4 +38,15 @@ export const HeaderTitle = styled(Title)``;
 
 export const TaskPanelTitle = styled(Title)`
   margin-bottom: 15px;
+`;
+
+export const FooterBlock = styled.footer`
+  height: ${({ theme }) => theme.sizes.footer.height};
+`;
+
+export const FooterWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 0;
 `;

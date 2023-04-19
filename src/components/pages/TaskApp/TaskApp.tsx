@@ -3,16 +3,10 @@ import { useLocalStorage } from "hooks/useLocalStorage";
 import idGenerate from "utils/idGenerate";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
-import Footer from "components/organisms/Footer";
-import {
-  Section,
-  Main,
-  Container,
-  Header,
-  HeaderWrapper,
-  HeaderTitle,
-  TaskPanelTitle,
-} from "components/templates/style";
+import Footer from "components/templates/Footer";
+import Header from "components/templates/Header";
+import Main from "components/templates/Main";
+import { TaskPanelTitle } from "components/templates/style";
 
 export type Task = {
   id: string;
@@ -52,37 +46,25 @@ const TaskApp = () => {
 
   return (
     <>
-      <Header>
-        <Container>
-          <HeaderWrapper>
-            <HeaderTitle size={32} weight={700} tag="h1">
-              To-Do List
-            </HeaderTitle>
-          </HeaderWrapper>
-        </Container>
-      </Header>
+      <Header />
 
       <Main>
-        <Section>
-          <Container>
-            <AddTaskForm onAddTask={handleAddTask} />
+        <AddTaskForm onAddTask={handleAddTask} />
 
-            <TaskPanelTitle size={24} weight={600} tag="h2">
-              Tasks
-            </TaskPanelTitle>
+        <TaskPanelTitle size={24} weight={600} tag="h2">
+          Tasks
+        </TaskPanelTitle>
 
-            {tasks.length ? (
-              <TaskList
-                tasks={tasks}
-                onDeleteTask={handleDeleteTask}
-                onCompleteTask={handleCompleteTask}
-                onEditTask={handleEditTask}
-              />
-            ) : (
-              <span>No tasks</span>
-            )}
-          </Container>
-        </Section>
+        {tasks.length ? (
+          <TaskList
+            tasks={tasks}
+            onDeleteTask={handleDeleteTask}
+            onCompleteTask={handleCompleteTask}
+            onEditTask={handleEditTask}
+          />
+        ) : (
+          <span>No tasks</span>
+        )}
       </Main>
 
       <Footer completed={completedTask.length} total={tasks.length} />

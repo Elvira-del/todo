@@ -4,6 +4,14 @@ type ButtonUIProps = {
   bg: string;
 };
 
+// const buttonMap = (theme: any) => {
+//   return {
+//     primary: theme.colors.primary,
+//     secondary: theme.colors.secondary,
+//     success: theme.colors.success,
+//   };
+// };
+
 export const ButtonUI = styled.button<ButtonUIProps>`
   padding: 10px;
   max-width: 100px;
