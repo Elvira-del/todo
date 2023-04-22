@@ -1,3 +1,4 @@
+import { memo } from "react";
 import TaskCard from "components/molecules/TaskCard";
 import { Task } from "components/pages/TaskApp/TaskApp";
 import { List } from "./style";
@@ -9,25 +10,22 @@ type TaskListProps = {
   onEditTask: (task: Task) => void;
 };
 
-const TaskList = ({
-  tasks,
-  onDeleteTask,
-  onCompleteTask,
-  onEditTask,
-}: TaskListProps) => {
-  return (
-    <List>
-      {tasks.map((task) => (
-        <TaskCard
-          key={task.id}
-          task={task}
-          onDelete={onDeleteTask}
-          onComplete={onCompleteTask}
-          onEdit={onEditTask}
-        />
-      ))}
-    </List>
-  );
-};
+const TaskList = memo(
+  ({ tasks, onDeleteTask, onCompleteTask, onEditTask }: TaskListProps) => {
+    return (
+      <List>
+        {tasks.map((task) => (
+          <TaskCard
+            key={task.id}
+            task={task}
+            onDelete={onDeleteTask}
+            onComplete={onCompleteTask}
+            onEdit={onEditTask}
+          />
+        ))}
+      </List>
+    );
+  }
+);
 
 export default TaskList;

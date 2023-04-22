@@ -1,5 +1,5 @@
-import { useCallback, useMemo } from "react";
-import { useLocalStorage } from "hooks/useLocalStorage";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { getLocalStorage, setLocalStorage } from "utils/localStorage";
 import idGenerate from "utils/idGenerate";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
@@ -15,30 +15,35 @@ export type Task = {
 };
 
 const TaskApp = () => {
-  const [tasks, setTasks] = useLocalStorage<Task[]>("localTasks", []);
-
-  const handleAddTask = (text: string) => {
-    setTasks([...tasks, { id: idGenerate(), text, done: false }]);
-  };
-
-  const handleEditTask = (editTask: Task) => {
-    setTasks(tasks.map((task) => (task.id === editTask.id ? editTask : task)));
-  };
-
-  const handleDeleteTask = (id: string) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
-
-  const handleCompleteTask = useCallback(
-    (id: string) => {
-      setTasks(
-        tasks.map((task) =>
-          task.id === id ? { ...task, done: !task.done } : task
-        )
-      );
-    },
-    [tasks, setTasks]
+  const [tasks, setTasks] = useState<Task[]>(
+    getLocalStorage("localTasks") ?? []
   );
+
+  useEffect(() => {
+    setLocalStorage("localTasks", tasks);
+  }, [tasks]);
+
+  const handleAddTask = useCallback((text: string) => {
+    setTasks((prev) => [...prev, { id: idGenerate(), text, done: false }]);
+  }, []);
+
+  const handleEditTask = useCallback((editTask: Task) => {
+    setTasks((prev) =>
+      prev.map((task) => (task.id === editTask.id ? editTask : task))
+    );
+  }, []);
+
+  const handleDeleteTask = useCallback((id: string) => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  }, []);
+
+  const handleCompleteTask = useCallback((id: string) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      )
+    );
+  }, []);
 
   const completedTask = useMemo(() => {
     return tasks.filter((task) => task.done);

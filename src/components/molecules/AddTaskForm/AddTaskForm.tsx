@@ -1,4 +1,11 @@
-import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  memo,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Button from "components/atoms/button";
 import InputText from "components/atoms/input";
 import { TaskForm, LabelTaskForm } from "./style";
@@ -7,7 +14,7 @@ type AddTaskFormProps = {
   onAddTask: (text: string) => void;
 };
 
-const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
+const AddTaskForm = memo(({ onAddTask }: AddTaskFormProps) => {
   const [text, setText] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,6 +62,6 @@ const AddTaskForm = ({ onAddTask }: AddTaskFormProps) => {
       </TaskForm>
     </>
   );
-};
+});
 
 export default AddTaskForm;
