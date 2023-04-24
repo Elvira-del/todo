@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Title from "components/atoms/title/Title";
+import Title from "components/atoms/Title";
 
 type ContainerProps = {
   horizontal?: number;

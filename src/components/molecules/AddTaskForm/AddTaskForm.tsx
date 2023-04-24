@@ -6,8 +6,8 @@ import {
   useRef,
   useState,
 } from "react";
-import Button from "components/atoms/button";
-import InputText from "components/atoms/input";
+import Button from "components/atoms/Button";
+import InputText from "components/atoms/Input";
 import { TaskForm, LabelTaskForm } from "./style";
 
 type AddTaskFormProps = {

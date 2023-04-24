@@ -13,9 +13,10 @@ type ButtonUIProps = {
 // };
 
 export const ButtonUI = styled.button<ButtonUIProps>`
-  padding: 10px;
+  padding: 12px 10px;
   max-width: 100px;
   width: 100%;
+  height: 100%;
   border-radius: ${({ theme }) => theme.border.radius};
   ${({ bg, theme }) => {
     switch (bg) {

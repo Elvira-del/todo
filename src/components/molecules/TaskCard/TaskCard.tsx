@@ -6,11 +6,11 @@ import {
   useRef,
   useState,
 } from "react";
-import Button from "components/atoms/button";
-import Checkbox from "components/atoms/checkbox";
-import InputText from "components/atoms/input";
+import Checkbox from "components/atoms/Checkbox";
 import { Task } from "components/pages/TaskApp/TaskApp";
-import { Card, Content, TaskTitle, Form, ButtonWrap } from "./style";
+import TaskEdit from "./components/TaskEdit";
+import TaskDisplay from "./components/TaskDisplay";
+import { Card, Content } from "./style";
 
 type TaskCardProps = {
   task: Task;
@@ -54,43 +54,20 @@ const TaskCard = memo(
 
         {isEditing ? (
           <Content>
-            <Form onSubmit={handleSaveTask}>
-              <InputText
-                value={task.text}
-                ref={inputRef}
-                onChange={handleChangeTaskContent}
-                title="Change your task"
-              />
-
-              <ButtonWrap>
-                <Button type="submit" className="success">
-                  Save
-                </Button>
-              </ButtonWrap>
-            </Form>
+            <TaskEdit
+              onSave={handleSaveTask}
+              text={task.text}
+              ref={inputRef}
+              onChange={handleChangeTaskContent}
+            />
           </Content>
         ) : (
-          <Content done={task.done}>
-            <TaskTitle size={18} weight={400} tag="h3">
-              {task.text}
-            </TaskTitle>
-
-            <ButtonWrap>
-              <Button
-                type="button"
-                className="primary"
-                onClick={() => handleEditTask(task)}
-              >
-                Edit
-              </Button>
-              <Button
-                type="button"
-                className="secondary"
-                onClick={() => onDelete(task.id)}
-              >
-                Delete
-              </Button>
-            </ButtonWrap>
+          <Content>
+            <TaskDisplay
+              task={task}
+              onEdit={handleEditTask}
+              onDelete={onDelete}
+            />
           </Content>
         )}
       </Card>
