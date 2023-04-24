@@ -13,7 +13,7 @@ declare module "styled-components" {
 
     fonts: {
       main: string;
-      cursive: string;
+      title: string;
     };
 
     media: {

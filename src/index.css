@@ -1,25 +1,16 @@
 @font-face {
-  font-family: "Alkatra";
-  src: url("assets/fonts/Alkatra-Regular.woff") format("woff"),
-    url("assets/fonts/Alkatra-Regular.woff2") format("woff2");
+  font-family: "EB Garamond";
+  src: url("assets/fonts/EBGaramond-Medium.woff") format("woff"),
+    url("assets/fonts/EBGaramond-Medium.woff2") format("woff2");
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Alkatra";
-  src: url("assets/fonts/Alkatra-SemiBold.woff") format("woff"),
-    url("assets/fonts/Alkatra-SemiBold.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Alkatra";
-  src: url("assets/fonts/Alkatra-Bold.woff") format("woff"),
-    url("assets/fonts/Alkatra-Bold.woff2") format("woff2");
+  font-family: "EB Garamond";
+  src: url("assets/fonts/EBGaramond-Bold.woff") format("woff"),
+    url("assets/fonts/EBGaramond-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
   font-display: swap;

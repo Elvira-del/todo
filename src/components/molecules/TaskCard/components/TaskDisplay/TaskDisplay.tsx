@@ -11,7 +11,7 @@ type TaskDisplayProps = {
 const TaskDisplay = ({ task, onEdit, onDelete }: TaskDisplayProps) => {
   return (
     <>
-      <TaskTitle size={18} weight={400} tag="h3" done={task.done}>
+      <TaskTitle size={18} weight={500} tag="h3" done={task.done}>
         {task.text}
       </TaskTitle>
 

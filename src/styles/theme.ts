@@ -12,7 +12,7 @@ export const baseTheme: DefaultTheme = {
 
   fonts: {
     main: "Montserrat, sans-serif",
-    cursive: "Alkatra, cursive",
+    title: "EB Garamond, serif",
   },
 
   media: {
@@ -20,7 +20,6 @@ export const baseTheme: DefaultTheme = {
     small: "(max-width: 540px)",
   },
 
-  // in px
   sizes: {
     container: { maxWidth: "1400px" },
     header: { height: "60px" },

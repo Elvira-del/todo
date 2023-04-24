@@ -7,6 +7,7 @@ export const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.colors.font};
   border-radius: ${({ theme }) => theme.border.radius};
   transition: ${({ theme }) => theme.durations.ms300} ease-in-out;
+  font-family: ${({ theme }) => theme.fonts.main};
 
   &:focus-visible {
     border-color: transparent;
