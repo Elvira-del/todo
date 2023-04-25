@@ -38,6 +38,7 @@ export const ButtonUI = styled.button<ButtonUIProps>`
         `;
     }
   }};
+  font-family: ${({ theme }) => theme.fonts.main};
   font-weight: 500;
   color: #ffffff;
 `;

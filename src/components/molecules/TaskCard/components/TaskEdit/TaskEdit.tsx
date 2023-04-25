@@ -20,7 +20,11 @@ const TaskEdit = forwardRef<HTMLInputElement, TaskEditProps>(
           title="Change your task"
         />
 
-        <Button type="submit" className="success">
+        <Button
+          type="submit"
+          className={text.length ? "success" : "disabled"}
+          disabled={!text.length}
+        >
           Save
         </Button>
       </Form>
