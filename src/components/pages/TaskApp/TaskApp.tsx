@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { getLocalStorage, setLocalStorage } from "utils/localStorage";
-import idGenerate from "utils/idGenerate";
+import { v4 as uuidv4 } from "uuid";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/templates/Footer";
@@ -24,7 +24,7 @@ const TaskApp = () => {
   }, [tasks]);
 
   const handleAddTask = useCallback((text: string) => {
-    setTasks((prev) => [...prev, { id: idGenerate(), text, done: false }]);
+    setTasks((prev) => [...prev, { id: uuidv4(), text, done: false }]);
   }, []);
 
   const handleEditTask = useCallback((editTask: Task) => {
