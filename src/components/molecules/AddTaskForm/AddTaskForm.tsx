@@ -16,7 +16,6 @@ type AddTaskFormProps = {
 
 const AddTaskForm = memo(({ onAddTask }: AddTaskFormProps) => {
   const [text, setText] = useState("");
-  const [isDisabled, setIsDisabled] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const AddTaskForm = memo(({ onAddTask }: AddTaskFormProps) => {
 
   const handleChangeTitle = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
-    setIsDisabled(false);
   };
 
   const handleSubmitTask = (e: FormEvent) => {
@@ -36,7 +34,6 @@ const AddTaskForm = memo(({ onAddTask }: AddTaskFormProps) => {
       onAddTask(text);
     }
     setText("");
-    setIsDisabled(true);
   };
 
   return (
@@ -54,8 +51,8 @@ const AddTaskForm = memo(({ onAddTask }: AddTaskFormProps) => {
 
         <Button
           type="submit"
-          className={isDisabled ? "disabled" : "primary"}
-          disabled={isDisabled}
+          className={text.length ? "primary" : "disabled"}
+          disabled={!text.length}
         >
           Add
         </Button>

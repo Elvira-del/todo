@@ -17,7 +17,7 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "paths": {
-      "types": ["/node_modules/@types", "@types/"]
+      "types": ["/node_modules/@types/", "@types/"]
     }
   },
   "include": ["src"]
