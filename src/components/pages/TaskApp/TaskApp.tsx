@@ -18,9 +18,14 @@ const TaskApp = () => {
   const [tasks, setTasks] = useState<Task[]>(
     getLocalStorage("localTasks") ?? []
   );
+  const [completed, setCompleted] = useState<Task[]>([]);
 
   useEffect(() => {
     setLocalStorage("localTasks", tasks);
+  }, [tasks]);
+
+  useEffect(() => {
+    setCompleted(tasks.filter((task) => task.done));
   }, [tasks]);
 
   const handleAddTask = useCallback((text: string) => {
@@ -45,10 +50,6 @@ const TaskApp = () => {
     );
   }, []);
 
-  const completedTask = useMemo(() => {
-    return tasks.filter((task) => task.done);
-  }, [tasks]);
-
   return (
     <>
       <Header />
@@ -72,7 +73,7 @@ const TaskApp = () => {
         )}
       </Main>
 
-      <Footer completed={completedTask.length} total={tasks.length} />
+      <Footer completed={completed.length} total={tasks.length} />
     </>
   );
 };
