@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { getLocalStorage, setLocalStorage } from "utils/localStorage";
 import { v4 as uuidv4 } from "uuid";
 import AddTaskForm from "components/molecules/AddTaskForm";
@@ -19,6 +19,13 @@ const TaskApp = () => {
     getLocalStorage("localTasks") ?? []
   );
   const [completed, setCompleted] = useState<Task[]>([]);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef) {
+      inputRef.current?.focus();
+    }
+  }, []);
 
   useEffect(() => {
     setLocalStorage("localTasks", tasks);
@@ -55,7 +62,7 @@ const TaskApp = () => {
       <Header />
 
       <Main>
-        <AddTaskForm onAddTask={handleAddTask} />
+        <AddTaskForm onAddTask={handleAddTask} ref={inputRef} />
 
         <TaskPanelTitle size={24} weight={600} tag="h2">
           Tasks
