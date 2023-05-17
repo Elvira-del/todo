@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getLocalStorage, setLocalStorage } from "utils/localStorage";
-import { v4 as uuidv4 } from "uuid";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/templates/Footer";
 import Header from "components/templates/Header";
 import Main from "components/templates/Main";
 import { TaskPanelTitle } from "components/templates/style";
+import { useStore } from "effector-react";
+import { model } from "store";
 
 export type Task = {
   id: string;
@@ -15,6 +16,8 @@ export type Task = {
 };
 
 const TaskApp = () => {
+  const todos = useStore(model.$todos);
+
   const [tasks, setTasks] = useState<Task[]>(
     getLocalStorage("localTasks") ?? []
   );
@@ -34,10 +37,6 @@ const TaskApp = () => {
   useEffect(() => {
     setCompleted(tasks.filter((task) => task.done));
   }, [tasks]);
-
-  const handleAddTask = useCallback((text: string) => {
-    setTasks((prev) => [...prev, { id: uuidv4(), text, done: false }]);
-  }, []);
 
   const handleEditTask = useCallback((editTask: Task) => {
     setTasks((prev) =>
@@ -62,15 +61,15 @@ const TaskApp = () => {
       <Header />
 
       <Main>
-        <AddTaskForm onAddTask={handleAddTask} ref={inputRef} />
+        <AddTaskForm onAddTask={model.addTodo} ref={inputRef} />
 
         <TaskPanelTitle size={24} weight={600} tag="h2">
           Tasks
         </TaskPanelTitle>
 
-        {tasks.length ? (
+        {todos.length ? (
           <TaskList
-            tasks={tasks}
+            tasks={todos}
             onDeleteTask={handleDeleteTask}
             onCompleteTask={handleCompleteTask}
             onEditTask={handleEditTask}
