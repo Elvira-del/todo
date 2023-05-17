@@ -16,6 +16,10 @@ export const createTodoList = () => {
       { id: uuidv4(), text, done: false },
     ],
     deleteTask: (todos, id: string) => todos.filter((task) => task.id !== id),
+    completeTask: (todos, id: string) =>
+      todos.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      ),
   });
 
   return {

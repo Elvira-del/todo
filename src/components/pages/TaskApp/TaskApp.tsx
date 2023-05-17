@@ -44,14 +44,6 @@ const TaskApp = () => {
     );
   }, []);
 
-  const handleCompleteTask = useCallback((id: string) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, done: !task.done } : task
-      )
-    );
-  }, []);
-
   return (
     <>
       <Header />
@@ -67,7 +59,7 @@ const TaskApp = () => {
           <TaskList
             tasks={todos}
             onDeleteTask={model.deleteTask}
-            onCompleteTask={handleCompleteTask}
+            onCompleteTask={model.completeTask}
             onEditTask={handleEditTask}
           />
         ) : (
