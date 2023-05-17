@@ -44,10 +44,6 @@ const TaskApp = () => {
     );
   }, []);
 
-  const handleDeleteTask = useCallback((id: string) => {
-    setTasks((prev) => prev.filter((task) => task.id !== id));
-  }, []);
-
   const handleCompleteTask = useCallback((id: string) => {
     setTasks((prev) =>
       prev.map((task) =>
@@ -61,7 +57,7 @@ const TaskApp = () => {
       <Header />
 
       <Main>
-        <AddTaskForm onAddTask={model.addTodo} ref={inputRef} />
+        <AddTaskForm onAddTask={model.addTask} ref={inputRef} />
 
         <TaskPanelTitle size={24} weight={600} tag="h2">
           Tasks
@@ -70,7 +66,7 @@ const TaskApp = () => {
         {todos.length ? (
           <TaskList
             tasks={todos}
-            onDeleteTask={handleDeleteTask}
+            onDeleteTask={model.deleteTask}
             onCompleteTask={handleCompleteTask}
             onEditTask={handleEditTask}
           />

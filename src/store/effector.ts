@@ -11,10 +11,11 @@ export const createTodoList = () => {
   const $todos = createStore<Task[]>([]);
 
   const todoApi = createApi($todos, {
-    addTodo: (todos, text: string) => [
+    addTask: (todos, text: string) => [
       ...todos,
       { id: uuidv4(), text, done: false },
     ],
+    deleteTask: (todos, id: string) => todos.filter((task) => task.id !== id),
   });
 
   return {
