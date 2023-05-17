@@ -38,12 +38,6 @@ const TaskApp = () => {
     setCompleted(tasks.filter((task) => task.done));
   }, [tasks]);
 
-  const handleEditTask = useCallback((editTask: Task) => {
-    setTasks((prev) =>
-      prev.map((task) => (task.id === editTask.id ? editTask : task))
-    );
-  }, []);
-
   return (
     <>
       <Header />
@@ -60,7 +54,7 @@ const TaskApp = () => {
             tasks={todos}
             onDeleteTask={model.deleteTask}
             onCompleteTask={model.completeTask}
-            onEditTask={handleEditTask}
+            onEditTask={model.editTask}
           />
         ) : (
           <span>No tasks</span>

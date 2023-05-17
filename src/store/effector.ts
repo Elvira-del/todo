@@ -20,6 +20,8 @@ export const createTodoList = () => {
       todos.map((task) =>
         task.id === id ? { ...task, done: !task.done } : task
       ),
+    editTask: (todos, taskEditing: Task) =>
+      todos.map((task) => (task.id === taskEditing.id ? taskEditing : task)),
   });
 
   return {
