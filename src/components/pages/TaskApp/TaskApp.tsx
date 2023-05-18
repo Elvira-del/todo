@@ -1,18 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import { useStore } from "effector-react";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/templates/Footer";
 import Header from "components/templates/Header";
 import Main from "components/templates/Main";
-import { TaskPanelTitle } from "components/templates/style";
-import { useStore } from "effector-react";
 import { model } from "store";
-
-export type Task = {
-  id: string;
-  text: string;
-  done: boolean;
-};
+import { Task } from "store/model";
+import { TaskPanelTitle } from "components/templates/style";
 
 const TaskApp = () => {
   const tasks = useStore(model.$tasks);

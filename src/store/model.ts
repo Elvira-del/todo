@@ -2,7 +2,7 @@ import { createStore, createApi, createEvent } from "effector";
 import connectLocalStorage from "effector-localstorage/sync";
 import { v4 as uuidv4 } from "uuid";
 
-type Task = {
+export type Task = {
   id: string;
   text: string;
   done: boolean;

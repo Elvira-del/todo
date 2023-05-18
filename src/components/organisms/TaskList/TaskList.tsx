@@ -1,6 +1,6 @@
 import { memo } from "react";
 import TaskCard from "components/molecules/TaskCard";
-import { Task } from "components/pages/TaskApp/TaskApp";
+import { Task } from "store/model";
 import { List } from "./style";
 
 type TaskListProps = {
