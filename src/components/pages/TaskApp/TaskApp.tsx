@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { useStore } from "effector-react";
 import AddTaskForm from "components/organisms/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
@@ -11,20 +10,12 @@ import { TaskPanelTitle } from "components/templates/style";
 const TaskApp = () => {
   const tasks = useStore(model.$tasks);
 
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (inputRef) {
-      inputRef.current?.focus();
-    }
-  }, []);
-
   return (
     <>
       <Header />
 
       <Main>
-        <AddTaskForm onAddTask={model.addTask} ref={inputRef} />
+        <AddTaskForm onAddTask={model.addTask} />
 
         <TaskPanelTitle size={24} weight={600} tag="h2">
           Tasks

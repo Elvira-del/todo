@@ -1,9 +1,9 @@
 import {
   ChangeEvent,
   FormEvent,
+  PropsWithRef,
   memo,
-  useEffect,
-  useRef,
+  useCallback,
   useState,
 } from "react";
 import Checkbox from "components/atoms/Checkbox";
@@ -22,13 +22,15 @@ type TaskCardProps = {
 const TaskCard = memo(
   ({ task, onDelete, onComplete, onEdit }: TaskCardProps) => {
     const [isEditing, setIsEditing] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-      if (isEditing) {
-        inputRef.current?.focus();
-      }
-    }, [isEditing]);
+    const inputRef = useCallback(
+      (input: PropsWithRef<HTMLInputElement>) => {
+        if (isEditing) {
+          input?.focus();
+        }
+      },
+      [isEditing]
+    );
 
     const handleCheckTask = () => {
       onComplete(task.id);
