@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { getLocalStorage, setLocalStorage } from "utils/localStorage";
+import { useEffect, useRef, useState } from "react";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/templates/Footer";
@@ -16,11 +15,8 @@ export type Task = {
 };
 
 const TaskApp = () => {
-  const todos = useStore(model.$todos);
+  const tasks = useStore(model.$tasks);
 
-  const [tasks, setTasks] = useState<Task[]>(
-    getLocalStorage("localTasks") ?? []
-  );
   const [completed, setCompleted] = useState<Task[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -29,10 +25,6 @@ const TaskApp = () => {
       inputRef.current?.focus();
     }
   }, []);
-
-  useEffect(() => {
-    setLocalStorage("localTasks", tasks);
-  }, [tasks]);
 
   useEffect(() => {
     setCompleted(tasks.filter((task) => task.done));
@@ -49,9 +41,9 @@ const TaskApp = () => {
           Tasks
         </TaskPanelTitle>
 
-        {todos.length ? (
+        {tasks.length ? (
           <TaskList
-            tasks={todos}
+            tasks={tasks}
             onDeleteTask={model.deleteTask}
             onCompleteTask={model.completeTask}
             onEditTask={model.editTask}
