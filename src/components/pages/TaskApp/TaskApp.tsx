@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useStore } from "effector-react";
-import AddTaskForm from "components/molecules/AddTaskForm";
+import AddTaskForm from "components/organisms/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
 import Footer from "components/templates/Footer";
 import Header from "components/templates/Header";

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import TaskCard from "components/molecules/TaskCard";
+import TaskCard from "components/organisms/TaskCard";
 import { Task } from "store/model";
 import { List } from "./style";
 
