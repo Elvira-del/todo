@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useStore } from "effector-react";
 import AddTaskForm from "components/molecules/AddTaskForm";
 import TaskList from "components/organisms/TaskList";
@@ -6,13 +6,11 @@ import Footer from "components/templates/Footer";
 import Header from "components/templates/Header";
 import Main from "components/templates/Main";
 import { model } from "store";
-import { Task } from "store/model";
 import { TaskPanelTitle } from "components/templates/style";
 
 const TaskApp = () => {
   const tasks = useStore(model.$tasks);
 
-  const [completed, setCompleted] = useState<Task[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -20,10 +18,6 @@ const TaskApp = () => {
       inputRef.current?.focus();
     }
   }, []);
-
-  useEffect(() => {
-    setCompleted(tasks.filter((task) => task.done));
-  }, [tasks]);
 
   return (
     <>
@@ -48,7 +42,7 @@ const TaskApp = () => {
         )}
       </Main>
 
-      <Footer completed={completed.length} total={tasks.length} />
+      <Footer tasks={tasks} />
     </>
   );
 };
