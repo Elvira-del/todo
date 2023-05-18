@@ -7,9 +7,9 @@ import {
   useState,
 } from "react";
 import Checkbox from "components/atoms/Checkbox";
-import { Task } from "components/pages/TaskApp/TaskApp";
 import TaskEdit from "./components/TaskEdit";
 import TaskDisplay from "./components/TaskDisplay";
+import { Task } from "store/model";
 import { Card, Content } from "./style";
 
 type TaskCardProps = {

@@ -1,5 +1,5 @@
-import { Task } from "components/pages/TaskApp/TaskApp";
 import Button from "components/atoms/Button";
+import { Task } from "store/model";
 import { TaskTitle, ButtonWrap } from "./style";
 
 type TaskDisplayProps = {
